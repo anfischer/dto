@@ -38,7 +38,7 @@ The DTO class can be used to generate generic Data Transfer Objects which
 does not enforce initializing type, but guaranties strict types for initialized
 properties (e.g. a property which is first initialized as string can not be changed to integer later)
 ``` php
-use Anfischer\Dto;
+use Anfischer\Dto\Dto;
 
 class GenericDataTransferObject extends Dto
 {
@@ -62,6 +62,8 @@ When forcing types properties can not be initialized with other types than defin
 properties (e.g. a property which is defined as string can not be initialized as integer)
 
 ``` php
+use Anfischer\Dto\Dto;
+
 class TypeHintedDataTransferObject extends Dto
 {
     protected $stringProperty;
@@ -92,6 +94,8 @@ $dto->integerProperty = 'foo';
 
 Finally, the DTO class allows for generating type hinted Data Transfer Objects with mixed types.  
 ``` php
+use Anfischer\Dto\Dto;
+
 class TypeHintedDataTransferObject extends Dto
 {
     protected $mixedProperty;
