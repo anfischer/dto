@@ -1,0 +1,49 @@
+{
+    "name": "anfischer/dto",
+    "type": "library",
+    "description": "A PHP implementation of the Data Transfer Object pattern (https://martinfowler.com/eaaCatalog/dataTransferObject.html)",
+    "keywords": [
+        "anfischer",
+        "dto"
+    ],
+    "homepage": "https://github.com/anfischer/dto",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andreas Fischer",
+            "email": "kontakt@season.dk",
+            "homepage": "https://season.dk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : ">=7.2.6",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anfischer\\Dto\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Anfischer\\Dto\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=ruleset.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=ruleset.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
