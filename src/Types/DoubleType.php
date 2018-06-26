@@ -7,6 +7,6 @@ class DoubleType implements TypeInterface
 {
     public function validate($value): bool
     {
-        return \is_double($value);
+        return \is_float($value);
     }
 }
