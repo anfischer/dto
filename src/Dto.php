@@ -40,9 +40,9 @@ abstract class Dto
     {
         if ($this->__isset($property)) {
             return $this->$property;
-        } else {
-            throw new UndefinedPropertyException(\get_class($this), $property);
         }
+
+        throw new UndefinedPropertyException(\get_class($this), $property);
     }
 
     /**
@@ -70,9 +70,9 @@ abstract class Dto
         if ($value === null) {
             // If value is not set, allow any value
             return 'mixed';
-        } else {
-            return self::getTypeOf($this->$property);
         }
+
+        return self::getTypeOf($this->$property);
     }
 
     /**
@@ -137,8 +137,8 @@ abstract class Dto
     {
         if (\is_object($value)) {
             return \get_class($value);
-        } else {
-            return \strtolower(\gettype($value));
         }
+
+        return \strtolower(\gettype($value));
     }
 }
