@@ -5,5 +5,5 @@ namespace Anfischer\Dto\Types;
 
 interface TypeInterface
 {
-    public function validate($value): bool;
+    public function isSatisfiedBy($value): bool;
 }

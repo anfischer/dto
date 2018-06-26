@@ -5,7 +5,7 @@ namespace Anfischer\Dto\Types;
 
 class StringType implements TypeInterface
 {
-    public function validate($value): bool
+    public function isSatisfiedBy($value): bool
     {
         return \is_string($value);
     }

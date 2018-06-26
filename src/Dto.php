@@ -110,7 +110,7 @@ abstract class Dto
     {
         $typeClass = self::getTypeClassFor($type);
         if (class_exists($typeClass)) {
-            return (new $typeClass())->validate($value);
+            return (new $typeClass())->isSatisfiedBy($value);
         }
 
         if (\is_a($value, $type)) {

@@ -5,7 +5,7 @@ namespace Anfischer\Dto\Types;
 
 class FalseType implements TypeInterface
 {
-    public function validate($value): bool
+    public function isSatisfiedBy($value): bool
     {
         return \is_bool($value) && $value === false;
     }
