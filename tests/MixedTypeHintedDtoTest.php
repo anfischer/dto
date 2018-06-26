@@ -13,7 +13,7 @@ class MixedTypeHintedDtoTest extends TestCase
 
     private $typeHintedDto;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -44,7 +44,7 @@ class MixedTypeHintedDtoTest extends TestCase
     }
 
     /** @test */
-    public function but_only_if_the_type_is_allowed()
+    public function but_only_if_the_type_is_allowed(): void
     {
         $this->expectException(InvalidTypeException::class);
         $this->expectExceptionMessage("::mixed must be of type 'string|integer|null' (type 'double' given)");

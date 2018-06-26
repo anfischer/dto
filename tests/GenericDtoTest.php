@@ -13,7 +13,7 @@ class GenericDtoTest extends TestCase
 
     private $genericDto;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -25,7 +25,7 @@ class GenericDtoTest extends TestCase
     }
 
     /** @test */
-    public function it_can_set_a_generic_property()
+    public function it_can_set_a_generic_property(): void
     {
         $this->genericDto->genericPropertyOne = 'foo';
         $this->assertEquals('foo', $this->genericDto->genericPropertyOne);

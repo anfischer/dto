@@ -133,7 +133,7 @@ class TypeHintedDtoTest extends TestCase
     }
 
     /** @test */
-    public function it_can_set_a_mixed_property()
+    public function it_can_set_a_mixed_property(): void
     {
         $this->typeHintedDto->mixed = 'string';
         $this->assertEquals('string', $this->typeHintedDto->mixed);

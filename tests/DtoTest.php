@@ -10,7 +10,7 @@ class DtoTest extends TestCase
 {
     private $dto;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -41,7 +41,7 @@ class DtoTest extends TestCase
     }
 
     /** @test */
-    public function the_default_type_separator_can_be_overridden()
+    public function the_default_type_separator_can_be_overridden(): void
     {
         $this->dto = new class() extends Dto {
 
