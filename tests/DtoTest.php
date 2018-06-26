@@ -41,7 +41,7 @@ class DtoTest extends TestCase
     }
 
     /** @test */
-    public function the_default_type_seperator_can_be_overriden()
+    public function the_default_type_separator_can_be_overridden()
     {
         $this->dto = new class() extends Dto {
 
