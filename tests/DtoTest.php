@@ -48,7 +48,7 @@ class DtoTest extends TestCase
             protected const TYPE_SEPARATOR = ',';
             protected $someProperty;
 
-            public function getPropertyType($property) : string
+            public function getPropertyType($property): string
             {
                 switch ($property) {
                     case 'someProperty':

@@ -30,7 +30,7 @@ class TypeHintedDtoTest extends TestCase
             protected $object;
             protected $mixed;
 
-            public function getPropertyType($property) : string
+            public function getPropertyType($property): string
             {
                 switch ($property) {
                     case 'string':
@@ -61,56 +61,56 @@ class TypeHintedDtoTest extends TestCase
     }
 
     /** @test */
-    public function it_can_set_a_string_property() : void
+    public function it_can_set_a_string_property(): void
     {
         $this->typeHintedDto->string = 'foo';
         $this->assertEquals('foo', $this->typeHintedDto->string);
     }
 
     /** @test */
-    public function it_can_set_a_integer_property() : void
+    public function it_can_set_a_integer_property(): void
     {
         $this->typeHintedDto->integer = 1;
         $this->assertEquals(1, $this->typeHintedDto->integer);
     }
 
     /** @test */
-    public function it_can_set_a_double_property() : void
+    public function it_can_set_a_double_property(): void
     {
         $this->typeHintedDto->double = 1.1;
         $this->assertEquals(1.1, $this->typeHintedDto->double);
     }
 
     /** @test */
-    public function it_can_set_a_boolean_property() : void
+    public function it_can_set_a_boolean_property(): void
     {
         $this->typeHintedDto->boolean = true;
         $this->assertEquals(true, $this->typeHintedDto->boolean);
     }
 
     /** @test */
-    public function it_can_set_a_boolean_true_property() : void
+    public function it_can_set_a_boolean_true_property(): void
     {
         $this->typeHintedDto->true = true;
         $this->assertEquals(true, $this->typeHintedDto->true);
     }
 
     /** @test */
-    public function it_can_set_a_boolean_false_property() : void
+    public function it_can_set_a_boolean_false_property(): void
     {
         $this->typeHintedDto->false = false;
         $this->assertEquals(false, $this->typeHintedDto->false);
     }
 
     /** @test */
-    public function it_can_set_an_array_property() : void
+    public function it_can_set_an_array_property(): void
     {
         $this->typeHintedDto->array = [];
         $this->assertEquals([], $this->typeHintedDto->array);
     }
 
     /** @test */
-    public function it_can_set_a_resource_property() : void
+    public function it_can_set_a_resource_property(): void
     {
         $resource = fopen('data://text/plain,dummy-resource', 'r');
         $this->typeHintedDto->resource = $resource;
@@ -118,14 +118,14 @@ class TypeHintedDtoTest extends TestCase
     }
 
     /** @test */
-    public function it_can_set_a_null_property() : void
+    public function it_can_set_a_null_property(): void
     {
         $this->typeHintedDto->null = null;
         $this->assertEquals(null, $this->typeHintedDto->null);
     }
 
     /** @test */
-    public function it_can_set_an_object_property() : void
+    public function it_can_set_an_object_property(): void
     {
         $object = new Dummy;
         $this->typeHintedDto->object = $object;
@@ -148,7 +148,7 @@ class TypeHintedDtoTest extends TestCase
      * @param string $property
      * @param $value
      */
-    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_string_property(string $property, $value) : void
+    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_string_property(string $property, $value): void
     {
         $this->expectException(InvalidTypeException::class);
         $valueType = $this->getTypeOf($value);
@@ -163,7 +163,7 @@ class TypeHintedDtoTest extends TestCase
      * @param string $property
      * @param $value
      */
-    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_an_integer_property(string $property, $value) : void
+    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_an_integer_property(string $property, $value): void
     {
         $this->expectException(InvalidTypeException::class);
         $valueType = $this->getTypeOf($value);
@@ -178,7 +178,7 @@ class TypeHintedDtoTest extends TestCase
      * @param string $property
      * @param $value
      */
-    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_double_property(string $property, $value) : void
+    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_double_property(string $property, $value): void
     {
         $this->expectException(InvalidTypeException::class);
         $valueType = $this->getTypeOf($value);
@@ -193,7 +193,7 @@ class TypeHintedDtoTest extends TestCase
      * @param string $property
      * @param $value
      */
-    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_boolean_property(string $property, $value) : void
+    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_boolean_property(string $property, $value): void
     {
         $this->expectException(InvalidTypeException::class);
         $valueType = $this->getTypeOf($value);
@@ -208,7 +208,7 @@ class TypeHintedDtoTest extends TestCase
      * @param string $property
      * @param $value
      */
-    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_true_property(string $property, $value) : void
+    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_true_property(string $property, $value): void
     {
         $this->expectException(InvalidTypeException::class);
         $valueType = $this->getTypeOf($value);
@@ -223,7 +223,7 @@ class TypeHintedDtoTest extends TestCase
      * @param string $property
      * @param $value
      */
-    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_false_property(string $property, $value) : void
+    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_false_property(string $property, $value): void
     {
         $this->expectException(InvalidTypeException::class);
         $valueType = $this->getTypeOf($value);
@@ -238,7 +238,7 @@ class TypeHintedDtoTest extends TestCase
      * @param string $property
      * @param $value
      */
-    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_an_array_property(string $property, $value) : void
+    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_an_array_property(string $property, $value): void
     {
         $this->expectException(InvalidTypeException::class);
         $valueType = $this->getTypeOf($value);
@@ -253,7 +253,7 @@ class TypeHintedDtoTest extends TestCase
      * @param string $property
      * @param $value
      */
-    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_resource_property(string $property, $value) : void
+    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_resource_property(string $property, $value): void
     {
         $this->expectException(InvalidTypeException::class);
         $valueType = $this->getTypeOf($value);
@@ -268,7 +268,7 @@ class TypeHintedDtoTest extends TestCase
      * @param string $property
      * @param $value
      */
-    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_null_property(string $property, $value) : void
+    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_a_null_property(string $property, $value): void
     {
         $this->expectException(InvalidTypeException::class);
         $valueType = $this->getTypeOf($value);
@@ -283,7 +283,7 @@ class TypeHintedDtoTest extends TestCase
      * @param string $property
      * @param $value
      */
-    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_an_object_property(string $property, $value) : void
+    public function it_throws_an_invalid_type_exception_if_invalid_types_are_provided_for_an_object_property(string $property, $value): void
     {
         $this->expectException(InvalidTypeException::class);
         $valueType = $this->getTypeOf($value);
@@ -293,7 +293,7 @@ class TypeHintedDtoTest extends TestCase
         $this->typeHintedDto->$property = $value;
     }
 
-    public function invalidStringTypesProvider() : array
+    public function invalidStringTypesProvider(): array
     {
         return [
             ['string', 1],
@@ -307,7 +307,7 @@ class TypeHintedDtoTest extends TestCase
         ];
     }
 
-    public function invalidIntegerTypesProvider() : array
+    public function invalidIntegerTypesProvider(): array
     {
         return [
             ['integer', 'string'],
@@ -321,7 +321,7 @@ class TypeHintedDtoTest extends TestCase
         ];
     }
 
-    public function invalidDoubleTypesProvider() : array
+    public function invalidDoubleTypesProvider(): array
     {
         return [
             ['double', 'string'],
@@ -335,7 +335,7 @@ class TypeHintedDtoTest extends TestCase
         ];
     }
 
-    public function invalidBooleanTypesProvider() : array
+    public function invalidBooleanTypesProvider(): array
     {
         return [
             ['boolean', 'string'],
@@ -348,7 +348,7 @@ class TypeHintedDtoTest extends TestCase
         ];
     }
 
-    public function invalidTrueTypesProvider() : array
+    public function invalidTrueTypesProvider(): array
     {
         return [
             ['true', 'string'],
@@ -362,7 +362,7 @@ class TypeHintedDtoTest extends TestCase
         ];
     }
 
-    public function invalidFalseTypesProvider() : array
+    public function invalidFalseTypesProvider(): array
     {
         return [
             ['false', 'string'],
@@ -376,7 +376,7 @@ class TypeHintedDtoTest extends TestCase
         ];
     }
 
-    public function invalidArrayTypesProvider() : array
+    public function invalidArrayTypesProvider(): array
     {
         return [
             ['array', 'string'],
@@ -390,7 +390,7 @@ class TypeHintedDtoTest extends TestCase
         ];
     }
 
-    public function invalidResourceTypesProvider() : array
+    public function invalidResourceTypesProvider(): array
     {
         return [
             ['resource', 'string'],
@@ -404,7 +404,7 @@ class TypeHintedDtoTest extends TestCase
         ];
     }
 
-    public function invalidNullTypesProvider() : array
+    public function invalidNullTypesProvider(): array
     {
         return [
             ['null', 'string'],
@@ -418,7 +418,7 @@ class TypeHintedDtoTest extends TestCase
         ];
     }
 
-    public function invalidObjectTypesProvider() : array
+    public function invalidObjectTypesProvider(): array
     {
         return [
             ['object', 'string'],

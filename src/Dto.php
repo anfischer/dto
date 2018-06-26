@@ -18,7 +18,7 @@ abstract class Dto
      * @throws InvalidTypeException
      * @throws UndefinedPropertyException
      */
-    public function __set(string $property, $value) : void
+    public function __set(string $property, $value): void
     {
         $type = $this->getPropertyType($property);
 
@@ -51,7 +51,7 @@ abstract class Dto
      * @param $property
      * @return bool
      */
-    public function __isset(string $property) : bool
+    public function __isset(string $property): bool
     {
         return property_exists($this, $property);
     }
@@ -63,7 +63,7 @@ abstract class Dto
      * @param  string $property
      * @return string
      */
-    public function getPropertyType($property) : string
+    public function getPropertyType($property): string
     {
         $value = $this->$property;
 
@@ -83,7 +83,7 @@ abstract class Dto
      * @param  mixed $value
      * @return bool
      */
-    private static function validateCompoundTypes(string $compoundType, $value) : bool
+    private static function validateCompoundTypes(string $compoundType, $value): bool
     {
         $types = \explode(static::TYPE_SEPARATOR, $compoundType);
 
@@ -106,7 +106,7 @@ abstract class Dto
      * @param mixed $value
      * @return bool
      */
-    private static function validateType(string $type, $value) : bool
+    private static function validateType(string $type, $value): bool
     {
         $typeClass = self::getTypeClassFor($type);
         if (class_exists($typeClass)) {
@@ -124,7 +124,7 @@ abstract class Dto
      * @param string $type
      * @return string
      */
-    private static function getTypeClassFor(string $type) : string
+    private static function getTypeClassFor(string $type): string
     {
         return __NAMESPACE__ . '\\Types\\' . ucfirst($type) . 'Type';
     }
@@ -133,7 +133,7 @@ abstract class Dto
      * @param mixed $value
      * @return string
      */
-    private static function getTypeOf($value) : string
+    private static function getTypeOf($value): string
     {
         if (\is_object($value)) {
             return \get_class($value);

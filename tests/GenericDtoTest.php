@@ -53,7 +53,7 @@ class GenericDtoTest extends TestCase
         $this->genericDto->genericPropertyOne = $value;
     }
 
-    public function invalidStringTypesProvider() : array
+    public function invalidStringTypesProvider(): array
     {
         return [
             [1],

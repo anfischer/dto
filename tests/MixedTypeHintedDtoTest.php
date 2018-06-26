@@ -20,7 +20,7 @@ class MixedTypeHintedDtoTest extends TestCase
         $this->typeHintedDto = new class() extends Dto {
             protected $mixed;
 
-            public function getPropertyType($property) : string
+            public function getPropertyType($property): string
             {
                 switch ($property) {
                     case 'mixed':
@@ -31,7 +31,7 @@ class MixedTypeHintedDtoTest extends TestCase
     }
 
     /** @test */
-    public function it_can_set_a_mixed_types_property() : void
+    public function it_can_set_a_mixed_types_property(): void
     {
         $this->typeHintedDto->mixed = 'foo';
         $this->assertEquals('foo', $this->typeHintedDto->mixed);
